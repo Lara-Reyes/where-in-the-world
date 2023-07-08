@@ -7,6 +7,11 @@ import CountryCard from "./components/CountryCard";
 
 function App() {
   const [countryData, setCountryData] = useState([]);
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode)
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,13 +38,13 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-day-lightBackground">
-      <Header />
-      <SearchBar />
-      <DropDownMenu />
+    <div className={`bg-${darkMode ? "night" : "day"}-background`}>
+      <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
+      <SearchBar darkMode={darkMode}/>
+      <DropDownMenu darkMode={darkMode}/>
       <div className="flex flex-wrap justify-center gap-10">
         {countryData.map((country, index) => (
-          <CountryCard key={index} country={country} />
+          <CountryCard key={index} country={country} darkMode={darkMode}/>
         ))}
       </div>
     </div>

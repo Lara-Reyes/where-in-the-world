@@ -5,15 +5,17 @@ export default {
     extend: {
       colors: {
         day: {
-          lightText: "hsl(200, 15%, 8%)",
-          lightInput: "hsl(0, 0%, 52%)",
-          lightBackground: "hsl(0, 0%, 98%)",
-          lightElements: "hsl(0, 0%, 100%)",
+          text: "hsl(200, 15%, 8%)",
+          input: "hsl(0, 0%, 52%)",
+          background: "hsl(0, 0%, 98%)",
+          elements: "hsl(0, 0%, 100%)",
+          hover: "hsl(0, 0%, 95%)",
         },
         night: {
-          darkText: "hsl(0, 0%, 100%)",
-          darkBackground: "hsl(207, 26%, 17%)",
-          darkElements: "hsl(209, 23%, 22%)",
+          text: "hsl(0, 0%, 100%)",
+          background: "hsl(207, 26%, 17%)",
+          elements: "hsl(209, 23%, 22%)",
+          hover: "hsl(209, 23%, 25%)",
         },
       },
     },
