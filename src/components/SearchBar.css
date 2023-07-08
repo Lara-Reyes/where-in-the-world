@@ -1,0 +1,10 @@
+.search-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 1.5rem;
+}
+
+.search-input::-webkit-search-cancel-button {
+  display: none;
+}
