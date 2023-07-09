@@ -4,14 +4,15 @@ import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import DropDownMenu from "./components/DropDownMenu";
 import CountryCard from "./components/CountryCard";
+import CountryDetails from "./components/CountryDetails";
 
-function App() {
+function HomePage() {
   const [countryData, setCountryData] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-  }
+    setDarkMode(!darkMode);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,17 +39,25 @@ function App() {
   }, []);
 
   return (
-    <div className={`bg-${darkMode ? "night" : "day"}-background`}>
-      <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
-      <SearchBar darkMode={darkMode}/>
-      <DropDownMenu darkMode={darkMode}/>
+    <div
+      style={{
+        backgroundColor: darkMode ? "hsl(207, 26%, 17%)" : "hsl(0, 0%, 98%)",
+      }}
+    >
+      {/* <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+      <SearchBar darkMode={darkMode} />
+      <DropDownMenu darkMode={darkMode} />
       <div className="flex flex-wrap justify-center gap-10">
         {countryData.map((country, index) => (
-          <CountryCard key={index} country={country} darkMode={darkMode}/>
+          <CountryCard key={index} country={country} darkMode={darkMode} />
         ))}
-      </div>
+      </div> */}
+      {countryData.map((country, index) => (
+          <CountryDetails key={index} country={country} darkMode={darkMode} />
+        ))}
+      
     </div>
   );
 }
 
-export default App;
+export default HomePage;

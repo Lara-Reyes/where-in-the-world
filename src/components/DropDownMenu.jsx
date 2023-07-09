@@ -60,7 +60,7 @@ function DropDownMenu({ darkMode }) {
             Europe
           </li>
           <li
-            className={`text-sm py-1 px-6 ${hoverClass}`}
+            className={`text-sm pb-3 py-1 px-6 ${hoverClass}`}
             onClick={() => handleOptionClick("oceania")}
           >
             Oceania
